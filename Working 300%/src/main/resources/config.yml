@@ -1,0 +1,1320 @@
+settings:
+  # Currency item settings
+  currency:
+    # Regular Shard Settings
+    material: AMETHYST_SHARD
+    custom_model_data: 1001
+    name: §b✦ Mining Shard
+    lore:
+      - §7A mystical shard infused with power
+      - §7Used to purchase basic equipment
+      - ''
+      - §b§lMining Shard
+
+    # Enchanted Shard Settings
+    enchanted:
+      material: AMETHYST_SHARD
+      custom_model_data: 1002
+      name: §d✨ Enchanted Shard
+      conversion_rate: 64 # Regular shards needed for 1 enchanted shard
+      lore:
+        - §7A mystical shard infused with
+        - §7magical properties
+        - ''
+        - §d§lMining Shard
+
+    # Void Shard Settings
+    void:
+      material: AMETHYST_SHARD
+      custom_model_data: 1003
+      name: §5✧ Void Shard
+      conversion_rate: 5 # Enchanted shards needed for 1 void shard
+      lore:
+        - §7A shard pulsing with void energy
+        - §7Used to purchase the most
+        - §7powerful equipment
+        - ''
+        - §5§lVoid-infused
+        - ''
+        - '§7Convert: §d5 Enchanted Shards'
+
+    # Pickaxe Shard Settings
+    pickaxe:
+      material: AMETHYST_SHARD
+      custom_model_data: 1004
+      name: §6⛏ Pickaxe Shard
+      lore:
+        - §7A shard imbued with mining power
+        - §7Used to purchase pickaxes
+        - ''
+        - §6§lPickaxe Shard
+
+    # Enchanted Pickaxe Shard Settings
+    enchanted_pickaxe:
+      material: AMETHYST_SHARD
+      custom_model_data: 1005
+      name: §d⛏ Enchanted Pickaxe Shard
+      conversion_rate: 64 # Regular pickaxe shards needed for 1 enchanted pickaxe shard
+      lore:
+        - §7A mystical pickaxe shard
+        - §7Used to purchase powerful pickaxes
+        - ''
+        - §d§lEnchanted Mining Shard
+        - ''
+        - '§7Convert: §64 ⛏ Pickaxe Shards'
+
+  # Message settings
+  messages:
+    enabled: true
+    prefix: §8[§bShards§8]
+    shard_gain: '%prefix% §a+%amount% shards!'
+    pickaxe_shard_gain: '%prefix% §a+%amount% pickaxe shards!'
+    enchanted_pickaxe_shard_gain: '%prefix% §a+%amount% enchanted pickaxe shards!'
+    insufficient_shards: '%prefix% §cYou don''t have enough shards!'
+    insufficient_enchanted_shards: '%prefix% §cYou don''t have enough enchanted shards!'
+    insufficient_void_shards: '%prefix% §cYou don''t have enough void shards!'
+    insufficient_pickaxe_shards: '%prefix% §cYou don''t have enough pickaxe shards!'
+    insufficient_enchanted_pickaxe_shards: '%prefix% §cYou don''t have enough enchanted
+      pickaxe shards!'
+    purchase_success: '%prefix% §aYou purchased %item%!'
+    error_occurred: '%prefix% §cAn error occurred while processing your purchase.'
+    balance: '%prefix% §aYou have %amount% shards!'
+    give_shards_sender: '%prefix% §aGave %amount% shards to %player%'
+    give_shards_receiver: '%prefix% §aYou received %amount% shards!'
+    player_not_found: '%prefix% §cPlayer not found!'
+    no_permission: '%prefix% §cYou don''t have permission to use this command!'
+    invalid_amount: '%prefix% §cInvalid amount!'
+    cannot_drop_armor: '%prefix% §cYou cannot drop special armor pieces!'
+    cannot_drop_pickaxe: '%prefix% §cYou cannot drop special pickaxes!'
+    enchanted_shard_purchase: '%prefix% §aYou converted %regular% regular shards into
+      %enchanted% enchanted shards!'
+    void_shard_purchase: '%prefix% §aYou converted %enchanted% enchanted shards into
+      %void% void shards!'
+    enchanted_pickaxe_shard_purchase: '%prefix% §aYou converted %regular% pickaxe
+      shards into %enchanted% enchanted pickaxe shards!'
+    enchanted_shard_revert: '%prefix% §aYou converted %enchanted% enchanted shard
+      into %regular% regular shards!'
+    void_shard_revert: '%prefix% §aYou converted %void% void shard into %enchanted%
+      enchanted shards!'
+    enchanted_pickaxe_shard_revert: '%prefix% §aYou converted %enchanted% enchanted
+      pickaxe shard into %regular% pickaxe shards!'
+
+  # GUI settings
+  gui:
+    title: Mining Shop
+    size: 54 # 6 rows of 9 slots
+    # Fill empty slots with this item (optional)
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: ' '
+      hide_attributes: true
+    navigation:
+      previous_page:
+        slot: 45
+        material: ARROW
+        name: §e← Previous Page
+        hide_attributes: true
+      next_page:
+        slot: 53
+        material: ARROW
+        name: §e→ Next Page
+        hide_attributes: true
+      info:
+        slot: 49
+        material: GRAY_STAINED_GLASS_PANE
+        name: ' '
+        hide_attributes: true
+    enchanted_shard:
+      slot: 16
+      page: 1
+      material: AMETHYST_SHARD
+      custom_model_data: 1002
+      name: §d✨ Enchanted Shard
+      hide_attributes: true
+      lore:
+        - §7Convert Mining Shards
+        - §7into Enchanted Shards.
+        - ''
+        - '§7Cost: §b64 ✦ Mining Shards'
+        - ''
+        - §dClick to convert!
+    void_shard:
+      slot: 16
+      page: 3
+      material: AMETHYST_SHARD
+      custom_model_data: 1003
+      name: §5✧ Void Shard
+      hide_attributes: true
+      lore:
+        - §7A shard pulsing with void energy
+        - §7Used to purchase the most
+        - §7powerful equipment
+        - ''
+        - '§7Cost: §d5 enchanted shards'
+        - ''
+        - §5Click to convert enchanted shards
+        - §5into void shards!
+    enchanted_pickaxe_shard:
+      slot: 16
+      page: 2
+      material: AMETHYST_SHARD
+      custom_model_data: 1002
+      name: §d⛏ Enchanted Pickaxe Shard
+      hide_attributes: true
+      lore:
+        - §7Convert Mining Pickaxe Shards
+        - §7into Enchanted Shards.
+        - ''
+        - '§7Cost: §664 ⛏ Pickaxe Shards'
+        - ''
+        - §dClick to convert!
+
+  # Blocks that drop shards when broken
+  shard_blocks:
+    DIAMOND_ORE:
+      amount: 1
+      pickaxe_shard_amount: 1
+      command_chance: 0
+      commands:
+        - give %player% minecraft:diamond 1
+        - give %player% minecraft:emerald 1
+    EMERALD_ORE:
+      amount: 4
+      pickaxe_shard_amount: 2
+      command_chance: 100
+      commands:
+        - give %player% minecraft:emerald 1
+        - effect give %player% minecraft:luck 30 1
+    GOLD_ORE:
+      command_chance: 0
+      amount: 3
+      pickaxe_shard_amount: 0
+      commands:
+        - give %player% minecraft:raw_gold 1
+    IRON_ORE:
+      command_chance: 0
+      amount: 2
+      pickaxe_shard_amount: 0
+      commands:
+        - give %player% minecraft:raw_iron 1
+    COAL_ORE:
+      command_chance: 0
+      amount: 1
+      pickaxe_shard_amount: 0
+      commands:
+        - give %player% minecraft:coal 1
+
+armor_sets:
+  # Common Miner Set (Tier 1 - Gray Leather)
+  NOVICE_MINER:
+    name: Common Miner Armor
+    page: 1
+    tier: 1
+    slots:
+      helmet: 10
+      chestplate: 19
+      leggings: 28
+      boots: 37
+    cost:
+      helmet: 25
+      chestplate: 25
+      leggings: 25
+      boots: 25
+    pieces:
+      helmet:
+        multiplier: 0.12
+        rolls: 0
+      chestplate:
+        multiplier: 0.12
+        rolls: 0
+      leggings:
+        multiplier: 0.12
+        rolls: 0
+      boots:
+        multiplier: 0.12
+        rolls: 0
+    gui:
+      helmet:
+        material: LEATHER_HELMET
+        display_name: §a§lCraft §7Miner Helmet
+        custom_model_data: 1001
+        hide_attributes: true
+        color:
+          red: 170
+          green: 170
+          blue: 170
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §725 §b✦ Mining Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 0.25x Mining Loot
+          - ''
+          - '§7Tier: §7§lCOMMON'
+      chestplate:
+        material: LEATHER_CHESTPLATE
+        display_name: §a§lCraft §7Miner Chestplate
+        custom_model_data: 1002
+        hide_attributes: true
+        color:
+          red: 170
+          green: 170
+          blue: 170
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §725 §b✦ Mining Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 0.25x Mining Loot
+          - ''
+          - '§7Tier: §7§lCOMMON'
+      leggings:
+        material: LEATHER_LEGGINGS
+        display_name: §a§lCraft §7Miner Leggings
+        custom_model_data: 1003
+        hide_attributes: true
+        color:
+          red: 170
+          green: 170
+          blue: 170
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §725 §b✦ Mining Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 0.25x Mining Loot
+          - ''
+          - '§7Tier: §7§lCOMMON'
+      boots:
+        material: LEATHER_BOOTS
+        display_name: §a§lCraft §7Miner Boots
+        custom_model_data: 1004
+        hide_attributes: true
+        color:
+          red: 170
+          green: 170
+          blue: 170
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §725 §b✦ Mining Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 0.25x Mining Loot
+          - ''
+          - '§7Tier: §7§lCOMMON'
+    armor:
+      helmet:
+        material: LEATHER_HELMET
+        display_name: §7Miner Helmet
+        custom_model_data: 1001
+        hide_attributes: true
+        color:
+          red: 170
+          green: 170
+          blue: 170
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 0.25x Mining Loot
+          - ''
+          - '§7Tier: §7§lCOMMON'
+      chestplate:
+        material: LEATHER_CHESTPLATE
+        display_name: §7Miner Chestplate
+        custom_model_data: 1002
+        hide_attributes: true
+        color:
+          red: 170
+          green: 170
+          blue: 170
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 0.25x Mining Loot
+          - ''
+          - '§7Tier: §7§lCOMMON'
+      leggings:
+        material: LEATHER_LEGGINGS
+        display_name: §7Miner Leggings
+        custom_model_data: 1003
+        hide_attributes: true
+        color:
+          red: 170
+          green: 170
+          blue: 170
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 0.25x Mining Loot
+          - ''
+          - '§7Tier: §7§lCOMMON'
+      boots:
+        material: LEATHER_BOOTS
+        display_name: §7Miner Boots
+        custom_model_data: 1004
+        hide_attributes: true
+        color:
+          red: 170
+          green: 170
+          blue: 170
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 0.25x Mining Loot
+          - ''
+          - '§7Tier: §7§lCOMMON'
+
+  # Forest Guardian Set (Tier 2 - Green Leather)
+  FOREST_GUARDIAN:
+    name: Uncommon Miner Armor
+    page: 1
+    tier: 2
+    requires: NOVICE_MINER
+    slots:
+      helmet: 11
+      chestplate: 20
+      leggings: 29
+      boots: 38
+    cost:
+      helmet: 75
+      chestplate: 75
+      leggings: 75
+      boots: 75
+    pieces:
+      helmet:
+        multiplier: 0.5
+        rolls: 1
+      chestplate:
+        multiplier: 0.5
+        rolls: 1
+      leggings:
+        multiplier: 0.5
+        rolls: 1
+      boots:
+        multiplier: 0.5
+        rolls: 1
+    gui:
+      helmet:
+        material: LEATHER_HELMET
+        display_name: §a§lCraft §aMiner Helmet
+        custom_model_data: 2001
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 85
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 Common Miner Helmet
+          - §775 §b✦ Mining Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 0.5x Mining Loot
+          - ''
+          - '§7Tier: §a§lUNCOMMON'
+      chestplate:
+        material: LEATHER_CHESTPLATE
+        display_name: §a§lCraft §aMiner Chestplate
+        custom_model_data: 2002
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 85
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 Common Miner Chestplate
+          - §775 §b✦ Mining Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 0.5x Mining Loot
+          - ''
+          - '§7Tier: §a§lUNCOMMON'
+      leggings:
+        material: LEATHER_LEGGINGS
+        display_name: §a§lCraft §aMiner Leggings
+        custom_model_data: 2003
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 85
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 Common Miner Leggings
+          - §775 §b✦ Mining Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 0.5x Mining Loot
+          - ''
+          - '§7Tier: §a§lUNCOMMON'
+      boots:
+        material: LEATHER_BOOTS
+        display_name: §a§lCraft §aMiner Boots
+        custom_model_data: 2004
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 85
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 Common Miner Boots
+          - §775 §b✦ Mining Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 0.5x Mining Loot
+          - ''
+          - '§7Tier: §a§lUNCOMMON'
+    armor:
+      helmet:
+        material: LEATHER_HELMET
+        display_name: §aMiner Helmet
+        custom_model_data: 2001
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 85
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 0.5x Mining Loot
+          - ''
+          - '§7Tier: §a§lUNCOMMON'
+      chestplate:
+        material: LEATHER_CHESTPLATE
+        display_name: §aMiner Chestplate
+        custom_model_data: 2002
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 85
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 0.5x Mining Loot
+          - ''
+          - '§7Tier: §a§lUNCOMMON'
+      leggings:
+        material: LEATHER_LEGGINGS
+        display_name: §aMiner Leggings
+        custom_model_data: 2003
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 85
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 0.5x Mining Loot
+          - ''
+          - '§7Tier: §a§lUNCOMMON'
+      boots:
+        material: LEATHER_BOOTS
+        display_name: §aMiner Boots
+        custom_model_data: 2004
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 85
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 0.5x Mining Loot
+          - ''
+          - '§7Tier: §a§lUNCOMMON'
+
+  # Desert Wanderer Set (Tier 3 - Yellow Leather)
+  DESERT_WANDERER:
+    name: Rare Miner Armor
+    page: 1
+    tier: 3
+    requires: FOREST_GUARDIAN
+    slots:
+      helmet: 12
+      chestplate: 21
+      leggings: 30
+      boots: 39
+    cost:
+      helmet: 225
+      chestplate: 225
+      leggings: 225
+      boots: 225
+    pieces:
+      helmet:
+        multiplier: 0.75
+        rolls: 1
+      chestplate:
+        multiplier: 0.75
+        rolls: 1
+      leggings:
+        multiplier: 0.75
+        rolls: 1
+      boots:
+        multiplier: 0.75
+        rolls: 1
+    gui:
+      helmet:
+        material: LEATHER_HELMET
+        display_name: §a§lCraft §bMiner Helmet
+        custom_model_data: 3001
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 255
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 Uncommon Miner Helmet
+          - §7225 §b✦ Mining Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 0.75x Mining Loot
+          - ''
+          - '§7Tier: §b§lRARE'
+      chestplate:
+        material: LEATHER_CHESTPLATE
+        display_name: §a§lCraft §bMiner Chestplate
+        custom_model_data: 3002
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 255
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 Uncommon Miner Chestplate
+          - §7225 §b✦ Mining Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 0.75x Mining Loot
+          - ''
+          - '§7Tier: §b§lRARE'
+      leggings:
+        material: LEATHER_LEGGINGS
+        display_name: §a§lCraft §bMiner Leggings
+        custom_model_data: 3003
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 255
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 Uncommon Miner Leggings
+          - §7225 §b✦ Mining Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 0.75x Mining Loot
+          - ''
+          - '§7Tier: §b§lRARE'
+      boots:
+        material: LEATHER_BOOTS
+        display_name: §a§lCraft §bMiner Boots
+        custom_model_data: 3004
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 255
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 Uncommon Miner Boots
+          - §7225 §b✦ Mining Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 0.75x Mining Loot
+          - ''
+          - '§7Tier: §b§lRARE'
+    armor:
+      helmet:
+        material: LEATHER_HELMET
+        display_name: §bMiner Helmet
+        custom_model_data: 3001
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 255
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 0.75x Mining Loot
+          - ''
+          - '§7Tier: §b§lRARE'
+      chestplate:
+        material: LEATHER_CHESTPLATE
+        display_name: §bMiner Chestplate
+        custom_model_data: 3002
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 255
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 0.75x Mining Loot
+          - ''
+          - '§7Tier: §b§lRARE'
+      leggings:
+        material: LEATHER_LEGGINGS
+        display_name: §bMiner Leggings
+        custom_model_data: 3003
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 255
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 0.75x Mining Loot
+          - ''
+          - '§7Tier: §b§lRARE'
+      boots:
+        material: LEATHER_BOOTS
+        display_name: §bMiner Boots
+        custom_model_data: 3004
+        hide_attributes: true
+        color:
+          red: 85
+          green: 255
+          blue: 255
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 0.75x Mining Loot
+          - ''
+          - '§7Tier: §b§lRARE'
+
+  # Frost Walker Set (Tier 4 - Light Blue Leather)
+  FROST_WALKER:
+    name: Epic Miner Armor
+    page: 1
+    tier: 4
+    requires: DESERT_WANDERER
+    slots:
+      helmet: 13
+      chestplate: 22
+      leggings: 31
+      boots: 40
+    cost_enchanted:
+      helmet: 10
+      chestplate: 10
+      leggings: 10
+      boots: 10
+    pieces:
+      helmet:
+        multiplier: 1.0
+        rolls: 1
+      chestplate:
+        multiplier: 1.0
+        rolls: 1
+      leggings:
+        multiplier: 1.0
+        rolls: 1
+      boots:
+        multiplier: 1.0
+        rolls: 1
+    gui:
+      helmet:
+        material: LEATHER_HELMET
+        display_name: §a§lCraft §5Miner Helmet
+        custom_model_data: 5001
+        hide_attributes: true
+        color:
+          red: 170
+          green: 0
+          blue: 170
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 §bRare Miner Helmet
+          - §5✨ 10 Enchanted Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 1.0x Mining Loot
+          - ''
+          - '§7Tier: §5§lEPIC'
+      chestplate:
+        material: LEATHER_CHESTPLATE
+        display_name: §a§lCraft §5Miner Chestplate
+        custom_model_data: 5002
+        hide_attributes: true
+        color:
+          red: 170
+          green: 0
+          blue: 170
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 §bRare Miner Chestplate
+          - §5✨ 10 Enchanted Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 1.0x Mining Loot
+          - ''
+          - '§7Tier: §5§lEPIC'
+      leggings:
+        material: LEATHER_LEGGINGS
+        display_name: §a§lCraft §5Miner Leggings
+        custom_model_data: 5003
+        hide_attributes: true
+        color:
+          red: 170
+          green: 0
+          blue: 170
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 §bRare Miner Chestplate
+          - §5✨ 10 Enchanted Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 1.0x Mining Loot
+          - ''
+          - '§7Tier: §5§lEPIC'
+      boots:
+        material: LEATHER_BOOTS
+        display_name: §a§lCraft §5Miner Boots
+        custom_model_data: 5004
+        hide_attributes: true
+        color:
+          red: 170
+          green: 0
+          blue: 170
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 §bRare Miner Leggings
+          - §5✨ 10 Enchanted Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 1.0x Mining Loot
+          - ''
+          - '§7Tier: §5§lEPIC'
+    armor:
+      helmet:
+        material: LEATHER_HELMET
+        display_name: §5Miner Helmet
+        custom_model_data: 5001
+        hide_attributes: true
+        color:
+          red: 170
+          green: 0
+          blue: 170
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 1.0x Mining Loot
+          - ''
+          - '§7Tier: §5§lEPIC'
+      chestplate:
+        material: LEATHER_CHESTPLATE
+        display_name: §5Miner Chestplate
+        custom_model_data: 5002
+        hide_attributes: true
+        color:
+          red: 170
+          green: 0
+          blue: 170
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 1.0x Mining Loot
+          - ''
+          - '§7Tier: §5§lEPIC'
+      leggings:
+        material: LEATHER_LEGGINGS
+        display_name: §5Miner Leggings
+        custom_model_data: 5003
+        hide_attributes: true
+        color:
+          red: 170
+          green: 0
+          blue: 170
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 1.0x Mining Loot
+          - ''
+          - '§7Tier: §5§lEPIC'
+      boots:
+        material: LEATHER_BOOTS
+        display_name: §5Miner Boots
+        custom_model_data: 5004
+        hide_attributes: true
+        color:
+          red: 170
+          green: 0
+          blue: 170
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 1.0x Mining Loot
+          - ''
+          - '§7Tier: §5§lEPIC'
+
+  # Legendary Set (Tier 5 - Gold Armor)
+  LEGENDARY:
+    name: Legendary Miner Armor
+    page: 1
+    tier: 5
+    requires: FROST_WALKER
+    slots:
+      helmet: 14
+      chestplate: 23
+      leggings: 32
+      boots: 41
+    cost_enchanted:
+      helmet: 20
+      chestplate: 20
+      leggings: 20
+      boots: 20
+    pieces:
+      helmet:
+        multiplier: 1.25
+        rolls: 1
+      chestplate:
+        multiplier: 1.25
+        rolls: 1
+      leggings:
+        multiplier: 1.25
+        rolls: 1
+      boots:
+        multiplier: 1.25
+        rolls: 1
+    gui:
+      helmet:
+        material: LEATHER_HELMET
+        display_name: §a§lCraft §6Miner Helmet
+        custom_model_data: 6001
+        hide_attributes: true
+        color:
+          red: 255
+          green: 170
+          blue: 0
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 §5Epic Miner Helmet
+          - §5✨ 20 Enchanted Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 1.25x Mining Loot
+          - ''
+          - '§7Tier: §6§lLEGENDARY'
+      chestplate:
+        material: LEATHER_CHESTPLATE
+        display_name: §a§lCraft §6Miner Chestplate
+        custom_model_data: 6002
+        hide_attributes: true
+        color:
+          red: 255
+          green: 170
+          blue: 0
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 §5Epic Miner Chestplate
+          - §5✨ 20 Enchanted Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 1.25x Mining Loot
+          - ''
+          - '§7Tier: §6§lLEGENDARY'
+      leggings:
+        material: LEATHER_LEGGINGS
+        display_name: §a§lCraft §6Miner Leggings
+        custom_model_data: 6003
+        hide_attributes: true
+        color:
+          red: 255
+          green: 170
+          blue: 0
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 §5Epic Miner Chestplate
+          - §5✨ 20 Enchanted Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 1.25x Mining Loot
+          - ''
+          - '§7Tier: §6§lLEGENDARY'
+      boots:
+        material: LEATHER_BOOTS
+        display_name: §a§lCraft §6Miner Boots
+        custom_model_data: 6004
+        hide_attributes: true
+        color:
+          red: 255
+          green: 170
+          blue: 0
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 §5Epic Miner Leggings
+          - §5✨ 20 Enchanted Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 1.25x Mining Loot
+          - ''
+          - '§7Tier: §6§lLEGENDARY'
+    armor:
+      helmet:
+        material: LEATHER_HELMET
+        display_name: §6Miner Helmet
+        custom_model_data: 6001
+        hide_attributes: true
+        color:
+          red: 255
+          green: 170
+          blue: 0
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 1.25x Mining Loot
+          - ''
+          - '§7Tier: §6§lLEGENDARY'
+      chestplate:
+        material: LEATHER_CHESTPLATE
+        display_name: §6Miner Chestplate
+        custom_model_data: 6002
+        hide_attributes: true
+        color:
+          red: 255
+          green: 170
+          blue: 0
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 1.25x Mining Loot
+          - ''
+          - '§7Tier: §6§lLEGENDARY'
+      leggings:
+        material: LEATHER_LEGGINGS
+        display_name: §6Miner Leggings
+        custom_model_data: 6003
+        hide_attributes: true
+        color:
+          red: 255
+          green: 170
+          blue: 0
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 1.25x Mining Loot
+          - ''
+          - '§7Tier: §6§lLEGENDARY'
+      boots:
+        material: LEATHER_BOOTS
+        display_name: §6Miner Boots
+        custom_model_data: 6004
+        hide_attributes: true
+        color:
+          red: 255
+          green: 170
+          blue: 0
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 1.25x Mining Loot
+          - ''
+          - '§7Tier: §6§lLEGENDARY'
+
+  # Mythic Set (Tier 6 - Gold Armor)
+  MYTHIC:
+    name: Mythic Miner Armor
+    page: 1
+    tier: 6
+    requires: LEGENDARY
+    slots:
+      helmet: 15
+      chestplate: 24
+      leggings: 33
+      boots: 42
+    cost_enchanted:
+      helmet: 30
+      chestplate: 30
+      leggings: 30
+      boots: 30
+    pieces:
+      helmet:
+        multiplier: 1.5
+        rolls: 1
+      chestplate:
+        multiplier: 1.5
+        rolls: 1
+      leggings:
+        multiplier: 1.5
+        rolls: 1
+      boots:
+        multiplier: 1.5
+        rolls: 1
+    gui:
+      helmet:
+        material: LEATHER_HELMET
+        display_name: §a§lCraft §cMiner Helmet
+        custom_model_data: 7001
+        hide_attributes: true
+        color:
+          red: 255
+          green: 85
+          blue: 85
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 §6Legendary Miner Helmet
+          - §5✨ 30 Enchanted Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 1.50x Mining Loot
+          - ''
+          - '§7Tier: §c§lMYTHIC'
+      chestplate:
+        material: LEATHER_CHESTPLATE
+        display_name: §a§lCraft §cMiner Chestplate
+        custom_model_data: 7002
+        hide_attributes: true
+        color:
+          red: 255
+          green: 85
+          blue: 85
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 §6Legendary Miner Chestplate
+          - §5✨ 30 Enchanted Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 1.50x Mining Loot
+          - ''
+          - '§7Tier: §c§lMYTHIC'
+      leggings:
+        material: LEATHER_LEGGINGS
+        display_name: §a§lCraft §cMiner Leggings
+        custom_model_data: 7003
+        hide_attributes: true
+        color:
+          red: 255
+          green: 85
+          blue: 85
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 §6Legendary Miner Chestplate
+          - §5✨ 30 Enchanted Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 1.50x Mining Loot
+          - ''
+          - '§7Tier: §c§lMYTHIC'
+      boots:
+        material: LEATHER_BOOTS
+        display_name: §a§lCraft §cMiner Boots
+        custom_model_data: 7004
+        hide_attributes: true
+        color:
+          red: 255
+          green: 85
+          blue: 85
+        lore:
+          - ''
+          - '§8Ingredients:'
+          - §71 §6Legendary Miner Leggings
+          - §5✨ 30 Enchanted Shards
+          - ''
+          - '§eEffects:'
+          - §f+ 1.50x Mining Loot
+          - ''
+          - '§7Tier: §c§lMYTHIC'
+    armor:
+      helmet:
+        material: LEATHER_HELMET
+        display_name: §cMiner Helmet
+        custom_model_data: 7001
+        hide_attributes: true
+        color:
+          red: 255
+          green: 85
+          blue: 85
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 1.50x Mining Loot
+          - ''
+          - '§7Tier: §c§lMYTHIC'
+      chestplate:
+        material: LEATHER_CHESTPLATE
+        display_name: §cMiner Chestplate
+        custom_model_data: 7002
+        hide_attributes: true
+        color:
+          red: 255
+          green: 85
+          blue: 85
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 1.50x Mining Loot
+          - ''
+          - '§7Tier: §c§lMYTHIC'
+      leggings:
+        material: LEATHER_LEGGINGS
+        display_name: §cMiner Leggings
+        custom_model_data: 7003
+        hide_attributes: true
+        color:
+          red: 255
+          green: 85
+          blue: 85
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 1.50x Mining Loot
+          - ''
+          - '§7Tier: §c§lMYTHIC'
+      boots:
+        material: LEATHER_BOOTS
+        display_name: §cMiner Boots
+        custom_model_data: 7004
+        hide_attributes: true
+        color:
+          red: 255
+          green: 85
+          blue: 85
+        lore:
+          - ''
+          - '§eEffects:'
+          - §f+ 1.50x Mining Loot
+          - ''
+          - '§7Tier: §c§lMYTHIC'
+
+pickaxes:
+  # Sewer Common Pickaxe (Tier 1 - 50 Shards & 1 Starter Pickaxe)
+  SEWER:
+    name: §a§lCraft &8Sewer Pickaxe
+    multiplier: 0.5
+    rolls: 0
+    page: 2
+    tier: 1
+    slot: 10
+    cost: 50
+    gui:
+      material: DIAMOND_PICKAXE
+      display_name: §a§lCraft §7Sewer Pickaxe
+      custom_model_data: 4001
+      hide_attributes: true
+      lore:
+        - ''
+        - '§8Ingredients:'
+        - §71 Starter Pickaxe
+        - §750 §b✦ Mining Shards
+        - ''
+        - '§eEffects:'
+        - §f+ 0.50x Mining Loot
+        - ''
+        - '§7Tier: §7§lCOMMON'
+    item:
+      material: DIAMOND_PICKAXE
+      display_name: §7Sewer Pickaxe
+      custom_model_data: 4001
+      hide_attributes: true
+      lore:
+        - ''
+        - '§eEffects:'
+        - §f+ 0.50x Mining Loot
+        - ''
+        - '§7Tier: §7§lCOMMON'
+
+  # Crypt Uncommon Pickaxe (Tier 2 - Requires Sewer Pickaxe & 150 Shards)
+  CRYPT:
+    name: Crypt Pickaxe
+    multiplier: 1
+    rolls: 0
+    page: 2
+    tier: 2
+    requires: SEWER
+    slot: 11
+    cost: 150
+    gui:
+      material: DIAMOND_PICKAXE
+      display_name: §a§lCraft §aCrypt Pickaxe
+      custom_model_data: 4002
+      hide_attributes: true
+      lore:
+        - ''
+        - '§8Ingredients:'
+        - §71 Sewer Pickaxe
+        - §7150 §b✦ Mining Shards
+        - ''
+        - '§eEffects:'
+        - §f+ 1.0x Mining Loot
+        - ''
+        - '§7Tier: §a§lUNCOMMON'
+    item:
+      material: DIAMOND_PICKAXE
+      display_name: §aCrypt Pickaxe
+      custom_model_data: 4002
+      hide_attributes: true
+      lore:
+        - ''
+        - '§eEffects:'
+        - §f+ 1.0x Mining Loot
+        - ''
+        - '§7Tier: §a§lUNCOMMON'
+
+  # Cloud Uncommon Pickaxe (Tier 3 - Requires Crypt Pickaxe & 5 Enchanted Shards)
+  CLOUD:
+    name: Cloud Pickaxe
+    multiplier: 1.5
+    rolls: 0
+    page: 2
+    tier: 2
+    requires: CRYPT
+    slot: 12
+    cost_enchanted: 5
+    gui:
+      material: DIAMOND_PICKAXE
+      display_name: §a§lCraft §aCloud Pickaxe
+      custom_model_data: 4003
+      hide_attributes: true
+      lore:
+        - ''
+        - '§8Ingredients:'
+        - §71 §aCrypt Pickaxe
+        - §75 §5✨ Enchanted Shards
+        - ''
+        - '§eEffects:'
+        - §f+ 1.5x Mining Loot
+        - ''
+        - '§7Tier: §a§lUNCOMMON'
+    item:
+      material: DIAMOND_PICKAXE
+      display_name: §aCloud Pickaxe
+      custom_model_data: 4003
+      hide_attributes: true
+      lore:
+        - ''
+        - '§eEffects:'
+        - §f+ 1.5x Mining Loot
+        - ''
+        - '§7Tier: §a§lUNCOMMON'
